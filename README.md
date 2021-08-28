@@ -1,5 +1,31 @@
 # Whatsapp_API
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm install --force`
+
+### How to RUN Applicaion
+
+### `npm start`
+First open [http://localhost:5000/auth/getqr](http://localhost:5000/auth/getqr)
+scan the code with your whatsapp.
+Then check Auth [https://whatsapp-node-api.herokuapp.com/auth/checkauth](https://whatsapp-node-api.herokuapp.com/auth/checkauth)
+IF every thing work great. Continue testing your api.
+
+## For testing api
+
+
+### DOCKER heroku deploy commands
+# Download and install Docker better follow official document.
+
+heroku container:login
+heroku create app_name
+heroku container:push web -a app_name
+heroku container:release web -a app_name
+heroku open -a app_name
+
 # API Doc
 ## Auth
 <u>Getting QR Code</u>
