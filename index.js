@@ -99,11 +99,13 @@ app.get("/", (req, res, next) => {
 
   app.get("/testapi", (req, res, next) => {
     axios.post('http://localhost:5000/chat/sendmessage/91123456789', {// ph number wih your country code.91 here indicates for india
-  message: 'hello world from Whatsapp API',})
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  });
+    message: 'hello world from heroku docker',})
+    .then(function (response) {
+      res.send("Message sent to the user")
+      console.log(response);
+    })
+    .catch(function (error) {
+      res.send("Error Message not sent")
+      console.log(error);
+    });
+    });
