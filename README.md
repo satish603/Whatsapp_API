@@ -11,7 +11,7 @@ In the project directory, you can run:
 ### `npm start`
 First open [http://localhost:5000/auth/getqr](http://localhost:5000/auth/getqr)
 > - scan the code with your whatsapp.
-> - Then check Auth [https://whatsapp-node-api.herokuapp.com/auth/checkauth](https://whatsapp-node-api.herokuapp.com/auth/checkauth)
+> - Then check Auth [http://localhost:5000/auth/checkauth](http://localhost:5000/auth/checkauth)
 > - IF every thing work great. Continue testing your api.
 
 ## For testing api
