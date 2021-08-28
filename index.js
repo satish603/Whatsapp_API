@@ -79,6 +79,7 @@ const groupRoute = require('./components/group');
 const authRoute = require('./components/auth');
 const contactRoute = require('./components/contact');
 
+
 app.use(function(req, res, next){
     console.log(req.method + ' : ' + req.path);
     next();
@@ -94,4 +95,15 @@ app.listen(port, () => {
 
 app.get("/", (req, res, next) => {
     return res.json({ message: "whatsapp API Server Running" });
+  });
+
+  app.get("/testapi", (req, res, next) => {
+    axios.post('http://localhost:5000/chat/sendmessage/91123456789', {// ph number wih your country code.91 here indicates for india
+  message: 'hello world from Whatsapp API',})
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   });
