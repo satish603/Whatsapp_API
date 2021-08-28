@@ -10,21 +10,28 @@ In the project directory, you can run:
 
 ### `npm start`
 First open [http://localhost:5000/auth/getqr](http://localhost:5000/auth/getqr)
-scan the code with your whatsapp.
-Then check Auth [https://whatsapp-node-api.herokuapp.com/auth/checkauth](https://whatsapp-node-api.herokuapp.com/auth/checkauth)
-IF every thing work great. Continue testing your api.
+> - scan the code with your whatsapp.
+> - Then check Auth [https://whatsapp-node-api.herokuapp.com/auth/checkauth](https://whatsapp-node-api.herokuapp.com/auth/checkauth)
+> - IF every thing work great. Continue testing your api.
 
 ## For testing api
 
+- open index.js and edit the ph number in post method and message in editor
+> Request Body
+>   axios.post('http://localhost:5000/chat/sendmessage/91123456789', {// ph number wih your country code.91 here indicates for india
+<hr>
+
+   > message: 'hello world from heroku docker',})
+<hr>
 
 ### DOCKER heroku deploy commands
 # Download and install Docker better follow official document.
 
-heroku container:login
-heroku create app_name
-heroku container:push web -a app_name
-heroku container:release web -a app_name
-heroku open -a app_name
+- heroku container:login
+- heroku create app_name
+- heroku container:push web -a app_name
+- heroku container:release web -a app_name
+- heroku open -a app_name
 
 # API Doc
 ## Auth
