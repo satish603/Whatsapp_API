@@ -65,13 +65,14 @@ client.on('auth_failure', () => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
+    
 });
 client.on('message', async msg => {
     console.log('MESSAGE RECEIVED', msg);
 
     if (msg.body === 'hello') {
         // Send a new message as a reply to the current one
-        msg.reply('hello sir/madam how can i help you');
+        msg.reply(message.from,'hello sir/madam how can i help you.');
 
     } });
 
