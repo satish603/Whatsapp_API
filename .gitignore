@@ -76,3 +76,4 @@ typings/
 .fusebox/
 
 session.json
+package-lock.json

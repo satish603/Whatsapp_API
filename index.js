@@ -66,12 +66,20 @@ client.on('auth_failure', () => {
 client.on('ready', () => {
     console.log('Client is ready!');
 });
+client.on('message', async msg => {
+    console.log('MESSAGE RECEIVED', msg);
 
-client.on('message', msg => {
-    if (config.webhook.enabled) {
-        axios.post(config.webhook.path, { msg })
-    }
-})
+    if (msg.body === 'hello') {
+        // Send a new message as a reply to the current one
+        msg.reply('hello sir/madam how can i help you');
+
+    } });
+
+// client.on('message', msg => {
+//     if (config.webhook.enabled) {
+//         axios.post(config.webhook.path, { msg })
+//     }
+// })
 client.initialize();
 
 const chatRoute = require('./components/chatting');
@@ -98,7 +106,7 @@ app.get("/", (req, res, next) => {
   });
 
   app.get("/testapi", (req, res, next) => {
-    axios.post('http://localhost:5000/chat/sendmessage/91123456789', {// ph number wih your country code.91 here indicates for india
+    axios.post('http://localhost:5000/chat/sendmessage/914354344554', {// ph number wih your country code.91 here indicates for india
     message: 'hello world from heroku docker',})
     .then(function (response) {
       res.send("Message sent to the user")
