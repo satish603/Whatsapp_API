@@ -72,9 +72,13 @@ client.on('message', async msg => {
 
     if (msg.body === 'hello') {
         // Send a new message as a reply to the current one
-        msg.reply(message.from,'hello sir/madam how can i help you.');
-
+        msg.reply('hello sir/madam how can i help you.');
     } });
+    // client.on('message', message => {
+    //     if(message.body === '!ping') {
+    //         client.sendMessage(message.from, 'pong');
+    //     }
+    // });
 
 // client.on('message', msg => {
 //     if (config.webhook.enabled) {
