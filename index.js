@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require('fs');
 const axios = require('axios');
 const shelljs = require('shelljs');
+const cors = require("cors");
 
 const config = require('./config.json');
 const { Client } = require('whatsapp-web.js');
@@ -35,6 +36,8 @@ app.use(bodyParser.json({ limit: '50mb' }));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 client.on('qr', qr => {
     fs.writeFileSync('./components/last.qr', qr);
