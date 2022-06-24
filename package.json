@@ -1,7 +1,7 @@
 {
-  "name": "whatsapp-node-api",
+  "name": "whatsapp-api",
   "version": "1.1.2",
-  "description": "A NodeJS API for whatsapp-web.js",
+  "description": "API for whatsapp-web.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
