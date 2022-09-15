@@ -75,7 +75,9 @@ typings/
 # FuseBox cache
 .fusebox/
 
-session.json
-package-lock.json
-components/last.qr
-txt
+node_modules
+# session.json
+# temp
+# components/last.qr
+# .wwebjs_auth/
+.wwebjs_auth/
