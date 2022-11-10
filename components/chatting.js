@@ -143,4 +143,17 @@ router.get('/getchats', async (req, res) => {
     })
 });
 
+router.get('/read_msg/:phone', async (req, res) => {
+    let phone = req.params.phone;
+    if (phone == undefined) {
+        res.send({status:"error",message:"please enter valid phone number"});
+    } else {
+        client.fetchMessages(`${phone}@c.us`, 10).then((messages) => {
+            res.send({ status:"success", message: messages });
+        }).catch(() => {
+            res.send({ status: "error", message: "read_msgerror" })
+        })
+    }
+});
+
 module.exports = router;

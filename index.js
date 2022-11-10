@@ -4,7 +4,7 @@ const fs = require("fs");
 const axios = require("axios");
 const shelljs = require("shelljs");
 const puppeteer = require('puppeteer');
-
+const cors = require("cors");
 const config = require("./config.json");
 const { Client, LocalAuth } = require("whatsapp-web.js");
 
@@ -22,12 +22,15 @@ global.authed = false;
 
 const app = express();
 
+
 const port = process.env.PORT || config.port;
 //Set Request Size Limit 50 MB
 app.use(bodyParser.json({ limit: "50mb" }));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 client.on("qr", (qr) => {
   console.log("new qr gen");
